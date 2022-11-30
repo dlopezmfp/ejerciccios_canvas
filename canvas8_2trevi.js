@@ -10,24 +10,24 @@ function cargaContextoCanvas(idCanvas) {
     return FALSE;
 }
 
-let contexto;
+//let contexto;
 
-window.onload = function () {
+window.addEventListener("DOMContentLoaded", function () {
     //Recibimos el elemento canvas
     contexto = cargaContextoCanvas('micanvas');
     if (contexto) {
         let img = new Image();
-		img.src='https://www.romando.org/wp-content/uploads/2018/06/fontana-di-trevi_roma.jpeg';
+		img.src='/imagenes/fontana-di-trevi.png';
 		img.onload = function(){
 			//Imagen original
 			contexto.drawImage(img,0,0);
 			//Imagen Escalada 1
-			contexto.drawImage(img,0,500,462,640);
+			//contexto.drawImage(img,0,500,462,640);
 			//Imagen 2 Recortada
-			contexto.drawImage(img,270,131,100,200,0,1200,1000,2000);
+			//contexto.drawImage(img,270,131,100,200,0,1200,1000,2000);
 			//Imagen Mezquita Recortada y escalada
 			//contexto.drawImage(img,200,0,370,200,0,600,670,400);
 		}
     }
-}
+});
 

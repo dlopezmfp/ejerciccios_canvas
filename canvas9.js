@@ -26,11 +26,11 @@ window.addEventListener("DOMContentLoaded",function(){
        contexto.strokeRect(10,60,280,130);
 
        //Dibujar el texto
-       contexto.font = "bold 1.8em sans-serif";
+       contexto.font = "bold 2.0em sans-serif";
        contexto.fillText('Hola mi nombre es', 20, 40);
        contexto.fillStyle = 'black';
        contexto.textAlign = 'center';
        contexto.font = 'bold 90px Verdana';
-       contexto.fillText('Jaime', 150, 150);
+       contexto.fillText('David', 150, 150);
     }
 });

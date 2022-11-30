@@ -5,4 +5,4 @@ Ejercicios prácticos para el aprendizaje y uso de la API de Canvas de HTML5 par
 
 
 
-![David López Moreno](imagenes/mi_signature_dpto.png)
+![Image Text](imagenes/mi_signature_dpto.png)

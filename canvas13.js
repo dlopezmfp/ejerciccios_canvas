@@ -25,7 +25,7 @@ function colorAleatorio(){
 function dibujar(){
     let contexto = cargaContextoCanvas('micanvas');
     //En primer lugar, cada vez que dibujemos frame a frame, vamos a borrar lo dibujado anteriormente
-    contexto.clearRect(0, 0, micanvas.width, micanvas.height);
+    contexto.clearRect(0, 0, contexto.canvas.clientWidth, contexto.canvas.clientHeight);
     //Guardamos el contexto. Para entender mejor este método, comenta y descomenta junto con restore y analiza el resultado
     contexto.save();
     
@@ -33,19 +33,21 @@ function dibujar(){
     let time = new Date();
    
     //Trasladamos el contexto para posicionar la forma a dibujar
-    contexto.translate(150,150);
+    contexto.translate(150*time.getMilliseconds,150);
      
     //Establecemos los angulos de rotación con los milisegundos. Cada vez que realiza el frame, tiene en cuenta los milisegundos
-    contexto.rotate((360*Math.PI/180) * time.getMilliseconds()/1000)
+    //contexto.rotate((360*Math.PI/180) * time.getMilliseconds()/1000)
+    //console.log((360*Math.PI/180) * time.getMilliseconds()/10000);
      
     //Devolvemos el contexto a la posición original
     contexto.translate(-150,-150);
      
      
     //Creamos un degradado
-    let lineGrad = contexto.createLinearGradient(150,81,150,268);
+    let lineGrad = contexto.createLinearGradient(75,0,75,300);
     lineGrad.addColorStop(0,'#ffbc40');
-    lineGrad.addColorStop(1,'#ffd890');
+    lineGrad.addColorStop(0.5,'#ffd890');
+    lineGrad.addColorStop(1,'#ff0000');
     contexto.fillStyle = lineGrad;
     contexto.fillRect(50,50,200,200);
     contexto.fill();
